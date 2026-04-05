@@ -16,28 +16,49 @@ const findMax = require("./max.js");
 // When passed to the max function
 // Then it should return -Infinity
 // Delete this test.todo and replace it with a test.
-test.todo("given an empty array, returns -Infinity");
+test("given an empty array, returns -Infinity", () => {
+  expect(findMax([])).toEqual(-Infinity);
+});
 
 // Given an array with one number
 // When passed to the max function
 // Then it should return that number
+test("given an array with one number, it returns that number", () => {
+  expect(findMax([28])).toEqual(28);
+});
 
 // Given an array with both positive and negative numbers
 // When passed to the max function
 // Then it should return the largest number overall
-
+test("given an array with both positive and negative numbers, it returns the largest number overall", () => {
+  expect(findMax([-12, 15, 3, -6, -1])).toEqual(15);
+});
 // Given an array with just negative numbers
 // When passed to the max function
 // Then it should return the closest one to zero
+test("given an array with just negative numbers, it returns the closest one to zero", () => {
+  expect(findMax([-12, -15, -3, -6, -1])).toEqual(-1);
+});
 
 // Given an array with decimal numbers
 // When passed to the max function
 // Then it should return the largest decimal number
+test("given an array with decimal numbers, it returns the largest decimal number", () => {
+  expect(findMax([2.5, 0.3, 0.8, 5.1, 3.9])).toEqual(5.1);
+});
 
 // Given an array with non-number values
 // When passed to the max function
 // Then it should return the max and ignore non-numeric values
+test("given an array with non-number values, it returns the max and ignore non-numeric values", () => {
+  expect(findMax([2.5, "potato", 0.3, toys, 0.8, undefined, 5.1, 3.9])).toEqual(
+    5.1
+  );
+});
 
 // Given an array with only non-number values
 // When passed to the max function
 // Then it should return the least surprising value given how it behaves for all other inputs
+test("given an array with only non-number values, it returns the least surprising value given how it behaves for all other inputs", () => {
+  expect(findMax(["kiwis", "potato", undefined])).toEqual(-Infinity);
+});
