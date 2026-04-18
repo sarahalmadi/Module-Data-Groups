@@ -15,7 +15,7 @@ function invert(obj) {
 
   return invertedObj;
 }
-
+module.exports = invert;
 // a) What is the current return value when invert is called with { a : 1 }
 console.log(invert({ a: 1 }));
 //It returns {'1': 'a'}  the key became the value and the value became the key.
