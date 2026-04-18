@@ -3,6 +3,7 @@
 // This program should log out the title, how many it serves and the ingredients.
 // Each ingredient should be logged on a new line
 // How can you fix it?
+//To be able to log out the title , and the value of ech key inside the object (each inside a new line) we need to define the key name "ingredients" and join a new line "\n" for each ingredient.
 
 const recipe = {
   title: "bruschetta",
@@ -12,4 +13,4 @@ const recipe = {
 
 console.log(`${recipe.title} serves ${recipe.serves}
   ingredients:
-${recipe}`);
+${recipe.ingredients.join("\n")}`);
